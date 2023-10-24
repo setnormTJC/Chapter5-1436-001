@@ -1,5 +1,9 @@
 #include <iostream>
 
+#include<fstream>
+
+#include<string>
+
 using namespace std;
 
 int main()
@@ -101,49 +105,109 @@ int main()
     //}
 
     //cout << "Out of the loop now" << endl; 
-
-    srand(time(0)); //don't worry about the details here 
-
-    //int loopCount = 0; 
-    //while (loopCount < 100)
+    // 
+    //const double PI = 3.14;
+    //for (double i = 0; i <= 10 * PI; i = i + PI)
     //{
-   int randomNumber = rand() % 100; 
-   cout << "Guess the number (between 0 and 99) " << endl;
-   
-   //cout << "Hint - it is: " << randomNumber << endl; 
+    //    cout << i << endl;
+    //}
 
-   int guessedValue; 
-   cin >> guessedValue; 
-   
-   //LOSS condition
-   int numberOfGuesses = 1; 
-
-   //log(2, 100)
-
-   while (guessedValue != randomNumber &&  numberOfGuesses < 7)
-   {
-       if (guessedValue > randomNumber)
-       {
-           cout << "Too high - guess again: " << endl; 
-           cin >> guessedValue; 
-           numberOfGuesses++; 
-       }
-
-       else if (guessedValue < randomNumber)
-       {
-           cout << "Too low - guess again: " << endl; //hi-lo
-           cin >> guessedValue; 
-
-           numberOfGuesses++;
-       }
-
-       else
-       {
-           cout << "Correct! " << endl; 
-       }
-   } //end while 
+    cout << "i" << "\t\t" << "2^i" << endl; //column description
+    cout << "--------------------------" << endl; //row separator
+    for (int i = 0; i <= 30; i++)
+    {
+        cout << i << "\t\t" << pow(2, i) << endl;
+    }
 
 
-   cout << "You won!" << endl; 
+    //R("\t")
+    //ifstream titanicFile{ "C:/Users/Work/Downloads/titanic.csv" };
+
+    //for (int i = 0; i < 50; i++)
+    //{
+    //    string titanicLine; 
+    //    getline(titanicFile, titanicLine); 
+    //    cout << titanicLine << endl; 
+    //}
+     
+    
+    //ifstream inputFile{ "inputFile.txt" };
+
+    //string lineOfInput; 
+
+    //while (!inputFile.eof())
+    //{
+    //    getline(inputFile, lineOfInput);
+    //    //inputFile >> lineOfInput; 
+    //    cout << lineOfInput << endl;
+    //}
+
+    
+
+    //Not such a great way to read multi-line file: 
+    //getline(inputFile, lineOfInput);
+    //cout << lineOfInput << endl;
+
+
+    //getline(inputFile, lineOfInput);
+    //cout << lineOfInput << endl;
+
+    //getline(inputFile, lineOfInput);
+    //cout << lineOfInput << endl;
+
+    //int grade;
+    //for (int i = 10; i >= 5; i = i - 2) 
+    //{
+    //    cout << "Enter student number " << i << "'s grade: ";
+    //    cin >> grade;
+    //}
+
+
+
+   // srand(time(0)); //don't worry about the details here 
+
+   // //int loopCount = 0; 
+   // //while (loopCount < 100)
+   // //{
+   //int randomNumber = rand() % 100; 
+   //cout << "Guess the number (between 0 and 99) " << endl;
+   //
+   ////cout << "Hint - it is: " << randomNumber << endl; 
+
+   //int guessedValue; 
+   //cin >> guessedValue; 
+   //
+   ////LOSS condition
+   //int numberOfGuesses = 1; 
+
+   ////log(2, 100)
+
+   //while (guessedValue != randomNumber)
+   //{
+   //    if (guessedValue > randomNumber)
+   //    {
+   //        cout << "Too high - guess again: " << endl; 
+   //        cin >> guessedValue; 
+   //        numberOfGuesses++; 
+   //    }
+
+   //    else if (guessedValue < randomNumber)
+   //    {
+   //        cout << "Too low - guess again: " << endl; //hi-lo
+   //        cin >> guessedValue; 
+
+   //        numberOfGuesses++;
+   //    }
+
+   //    else
+   //    {
+   //        cout << "Correct! " << endl; 
+   //    }
+   //} //end while 
+
+
+   //cout << "You won!" << endl; 
+
+
    return 0;
 }
