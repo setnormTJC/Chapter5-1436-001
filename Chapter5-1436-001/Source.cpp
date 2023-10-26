@@ -4,10 +4,50 @@
 
 #include<string>
 
+#include<filesystem>
+
 using namespace std;
+
+void printAllFileContentsInFolder()
+{
+    int fileCount = 0;
+    string rootFolderPath = "C:/Users/Work/Desktop/misc/testTextFiles";
+    for (const auto& entry : std::filesystem::directory_iterator(rootFolderPath))
+    {
+        fileCount++;
+        string s = entry.path().string();
+        cout << "Filepath number " << fileCount << ": " << s << endl;
+
+        std::ifstream inputFile{ s };
+        while (!inputFile.eof())
+        {
+            string input;
+            getline(inputFile, input, ' ');
+            cout << input << endl;
+        }
+        cout << "\n\n";
+    }
+}
 
 int main()
 {
+    //printAllFileContentsInFolder(); //function callf 
+
+    int totalLoopIters = 0; 
+    for (int i = 0; i < 50; i++)
+    {
+        for (int j = 0; j < 40; j++)
+        {
+            //cout << i * j << " ";
+            //cout << "i: " << i << "\t" << "j: " << j << endl;
+            // 
+            totalLoopIters++; 
+        } //closes INNER for loop
+
+        cout << "\n";
+    }
+    cout << totalLoopIters << endl; 
+
     ////LOOPS/repetition 
 
     //const int TOTAL_NUMBER_OF_STUDENTS = 5;
@@ -112,12 +152,12 @@ int main()
     //    cout << i << endl;
     //}
 
-    cout << "i" << "\t\t" << "2^i" << endl; //column description
-    cout << "--------------------------" << endl; //row separator
-    for (int i = 0; i <= 30; i++)
-    {
-        cout << i << "\t\t" << pow(2, i) << endl;
-    }
+    //cout << "i" << "\t\t" << "2^i" << endl; //column description
+    //cout << "--------------------------" << endl; //row separator
+    //for (int i = 0; i <= 30; i = i + 2)
+    //{
+    //    cout << i << "\t\t" << pow(2, i) << endl;
+    //}
 
 
     //R("\t")
@@ -207,6 +247,8 @@ int main()
 
 
    //cout << "You won!" << endl; 
+
+
 
 
    return 0;
